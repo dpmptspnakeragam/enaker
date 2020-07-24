@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -73,10 +73,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default']['hostname'] = 'pgsql:host=localhost;dbname=naker_new'; //set host
-$db['default']['username'] = 'naker_nakeragam'; //set username
-$db['default']['password'] = 'nakeragam123'; //set password
-$db['default']['database'] = 'naker_new'; //set databse
+$db['default']['hostname'] = 'pgsql:host=localhost;dbname=naker_ci'; //set host
+$db['default']['username'] = 'postgres'; //set username
+$db['default']['password'] = 'naker123'; //set password
+$db['default']['database'] = 'naker'; //set databse
 $db['default']['dbdriver'] = 'pdo'; //set driver here
-
-

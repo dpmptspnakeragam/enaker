@@ -7,14 +7,14 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">P2K2</li>
-                        <li class="breadcrumb-item active" aria-current="page">Wajib Lapor Lowongan Kerja</li>
+                        <li class="breadcrumb-item active" aria-current="page">Penempatan Kerja</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="text-center">Data Wajib Lapor Lowongan Kerja</h3>
+                <h3 class="text-center">Data Penempatan Kerja</h3>
                 <hr>
                 <div class="panel-heading">
                     <?php if ($this->session->flashdata('gagal')) : ?>
@@ -33,7 +33,7 @@
                             </button>
                         </div>
                     <?php endif; ?>
-                    <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalWajibLapor"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalPenempatan"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
                 </div><br>
                 <!-- start: Accordion -->
                 <div class="table-responsive">
@@ -44,29 +44,31 @@
                                 <th class="text-center" width="10%">Posisi</th>
                                 <th class="text-center" width="10%">Penempatan</th>
                                 <th class="text-center" width="10%">Pendidikan Terakhir</th>
-                                <th class="text-center" width="10%">Usia Minimal</th>
+                                <th class="text-center" width="10%">Usia</th>
                                 <th class="text-center" width="10%">Jenis Kelamin</th>
                                 <th class="text-center" width="10%">Status Karyawan</th>
-                                <th class="text-center" width="10%">Gaji</th>
+                                <th class="text-center" width="10%">Bulan</th>
+                                <th class="text-center" width="10%">Tahun</th>
                                 <th class="text-center" width="10%"><i class="fa fa-cog"></i> Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($wl_naker->result() as $row) {
+                            <?php foreach ($penempatan->result() as $row) {
                             ?>
                                 <tr class="odd gradeX">
                                     <td><?= $row->nama_perusahaan; ?></td>
                                     <td><?= $row->posisi; ?></td>
                                     <td><?= $row->penempatan; ?></td>
                                     <td><?= $row->pendidikan; ?></td>
-                                    <td><?= $row->usia; ?></td>
-                                    <td><?= $row->jenis_kelamin; ?></td>
+                                    <td><?= $row->umur; ?></td>
+                                    <td><?= $row->jk; ?></td>
                                     <td><?= $row->status; ?></td>
-                                    <td><?= $row->gaji; ?></td>
+                                    <td><?= $row->bulan; ?></td>
+                                    <td><?= $row->tahun; ?></td>
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <a class="btn btn-outline-warning btn-sm btn-circle" href="#" data-toggle="modal" data-target="#EditPerusahaan<?php echo $row->id_perusahaan; ?>" title="Edit"><i class="fa fa-edit"></i></a>
-                                            <a class="btn btn-outline-danger btn-sm btn-circle" href="<?php echo base_url() ?>admin/wajib_lapor_loker/hapus/<?php echo $row->id_perusahaan; ?>" title="Hapus" onclick="javascript: return confirm('Anda yakin hapus <?= $row->nama_perusahaan; ?>?')"><i class="fa fa-times"></i></a>
+                                            <a class="btn btn-outline-warning btn-sm btn-circle" href="#" data-toggle="modal" data-target="#EditPenempatan<?php echo $row->id_penempatan; ?>" title="Edit"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-outline-danger btn-sm btn-circle" href="<?php echo base_url() ?>admin/penempatan_kerja/hapus/<?php echo $row->id_penempatan; ?>" title="Hapus" onclick="javascript: return confirm('Anda yakin hapus <?= $row->nama_perusahaan; ?>?')"><i class="fa fa-times"></i></a>
                                         </div>
                                     </td>
                                 </tr>
