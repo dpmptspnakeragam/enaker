@@ -40,16 +40,20 @@
                     <table class="table table-striped table-borderless table-hover" id="dataTables-example">
                         <thead class="bg-info text-light">
                             <tr>
-                                <th class="text-center" width="10%">Nama Perusahaan</th>
-                                <th class="text-center" width="10%">Posisi</th>
-                                <th class="text-center" width="10%">Penempatan</th>
-                                <th class="text-center" width="10%">Pendidikan Terakhir</th>
-                                <th class="text-center" width="10%">Usia</th>
-                                <th class="text-center" width="10%">Jenis Kelamin</th>
-                                <th class="text-center" width="10%">Status Karyawan</th>
-                                <th class="text-center" width="10%">Bulan</th>
-                                <th class="text-center" width="10%">Tahun</th>
-                                <th class="text-center" width="10%"><i class="fa fa-cog"></i> Action</th>
+                                <th class="text-center" rowspan="2">Nama Perusahaan</th>
+                                <th class="text-center" rowspan="2">Posisi</th>
+                                <th class="text-center" rowspan="2">Penempatan</th>
+                                <th class="text-center" rowspan="2">Pendidikan Terakhir</th>
+                                <th class="text-center" rowspan="2">Usia</th>
+                                <th class="text-center" colspan="2">Jenis Kelamin</th>
+                                <th class="text-center" rowspan="2">Status Karyawan</th>
+                                <th class="text-center" rowspan="2">Bulan</th>
+                                <th class="text-center" rowspan="2">Tahun</th>
+                                <th class="text-center" rowspan="2"><i class="fa fa-cog"></i> Action</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Laki-Laki</th>
+                                <th class="text-center">Perempuan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,7 +65,8 @@
                                     <td><?= $row->penempatan; ?></td>
                                     <td><?= $row->pendidikan; ?></td>
                                     <td><?= $row->umur; ?></td>
-                                    <td><?= $row->jk; ?></td>
+                                    <td><?= $row->lk; ?> Orang</td>
+                                    <td><?= $row->pr; ?> Orang</td>
                                     <td><?= $row->status; ?></td>
                                     <td><?= $row->bulan; ?></td>
                                     <td><?= $row->tahun; ?></td>

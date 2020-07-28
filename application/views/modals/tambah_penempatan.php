@@ -46,14 +46,13 @@
                         <label for="usia">Usia</label>
                         <input class="form-control" name="umur" placeholder="Usia" required>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-lg-3">
-                            <label>Jenis Kelamin</label>
-                            <select required name="jk" class="form-control">
-                                <option>Laki-Laki</option>
-                                <option>Perempuan</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="usia">Laki-Laki</label>
+                        <input class="form-control" name="lk" placeholder="Jumlah Laki-Laki" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="usia">Perempuan</label>
+                        <input class="form-control" name="pr" placeholder="Jumlah Perempuan" required>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3">

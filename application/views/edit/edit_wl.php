@@ -46,15 +46,13 @@
               <label for="usia">Usia Minimal</label>
               <input class="form-control" name="usia" placeholder="Usia" value="<?php echo $row->usia; ?>" required>
             </div>
-            <div class="row">
-              <div class="form-group col-lg-3">
-                <label>Jenis Kelamin</label>
-                <select required name="jenis_kelamin" class="form-control" value="<?php echo $row->jenis_kelamin; ?>">
-                  <option value="<?php echo $row->jenis_kelamin; ?>" selected><?php echo $row->jenis_kelamin; ?></option>
-                  <option>Laki-Laki</option>
-                  <option>Perempuan</option>
-                </select>
-              </div>
+            <div class="form-group">
+              <label for="usia">Laki-Laki</label>
+              <input class="form-control" name="lk" placeholder="Jumlah Laki-Laki" value="<?php echo $row->lk; ?>" required>
+            </div>
+            <div class="form-group">
+              <label for="usia">Perempuan</label>
+              <input class="form-control" name="pr" placeholder="Jumlah Perempuan" value="<?php echo $row->pr; ?>" required>
             </div>
             <div class="row">
               <div class="form-group col-lg-3">

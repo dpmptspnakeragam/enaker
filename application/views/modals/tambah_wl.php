@@ -8,63 +8,65 @@
         </button>
       </div>
       <div class="modal-body">
-      <form role="form" action="<?= base_url(); ?>admin/wajib_lapor_loker/tambah"method="post"  enctype="multipart/form-data">
-      <?php  foreach ( $idmax->result() as $row ) {
-        ?>
-          <div class="form-group" hidden>
+        <form role="form" action="<?= base_url(); ?>admin/wajib_lapor_loker/tambah" method="post" enctype="multipart/form-data">
+          <?php foreach ($idmax->result() as $row) {
+          ?>
+            <div class="form-group" hidden>
               <label>Id</label>
-              <input type="text" class="form-control" id="id" name="id" value="<?= $row->idmax+1;?>">
-          </div>
-        <?php } ?>
+              <input type="text" class="form-control" id="id" name="id" value="<?= $row->idmax + 1; ?>">
+            </div>
+          <?php } ?>
           <div class="form-group">
-              <label for="nama_perusahaan">Nama Perusahaan</label>
-              <input class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
-              
-          </div>
-          <div class="form-group">
-              <label for="posisi">Posisi</label>
-              <input class="form-control" name="posisi" placeholder="Posisi" required>
+            <label for="nama_perusahaan">Nama Perusahaan</label>
+            <input class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required>
+
           </div>
           <div class="form-group">
-              <label for="penempatan">Penempatan</label>
-              <input class="form-control" name="penempatan" placeholder="Penempatan" required>
+            <label for="posisi">Posisi</label>
+            <input class="form-control" name="posisi" placeholder="Posisi" required>
           </div>
-          <div class="row">
-          <div class="form-group col-lg-3">
-            <label>Pendidikan Terakhir</label>
-            <select required name="pendidikan"class="form-control">
-            <option>Tidak Sekolah</option>
-            <option>SD / Sederajat</option>
-            <option>SMP / Sederajat</option>
-            <option>SMA / Sederajat</option>
-            <option>D1 / D2 / D3 </option>
-            <option>S1 / S2 / S3 </option>
-            </select>
-          </div></div>
           <div class="form-group">
-              <label for="usia">Usia Minimal</label>
-              <input class="form-control" name="usia" placeholder="Usia" required>
+            <label for="penempatan">Penempatan</label>
+            <input class="form-control" name="penempatan" placeholder="Penempatan" required>
           </div>
           <div class="row">
-          <div class="form-group col-lg-3">
-          <label>Jenis Kelamin</label>
-          <select required name="jenis_kelamin"class="form-control">
-            <option>Laki-Laki</option>
-            <option>Perempuan</option>
-            </select>
-          </div></div>
-          <div class="row">
-          <div class="form-group col-lg-3">
-          <label for="status_karyawan">Status Karyawan</label>
-          <select required name="status"class="form-control">
-            <option>PKWT</option>
-            <option>PKWTT</option>
-            <option>Harian</option>
-            </select>
-          </div></div>
+            <div class="form-group col-lg-3">
+              <label>Pendidikan Terakhir</label>
+              <select required name="pendidikan" class="form-control">
+                <option>Tidak Sekolah</option>
+                <option>SD / Sederajat</option>
+                <option>SMP / Sederajat</option>
+                <option>SMA / Sederajat</option>
+                <option>D1 / D2 / D3 </option>
+                <option>S1 / S2 / S3 </option>
+              </select>
+            </div>
+          </div>
           <div class="form-group">
-              <label for="gaji">Gaji</label>
-              <input class="form-control" name="gaji" placeholder="Masukan Angka" required>
+            <label for="usia">Usia Minimal</label>
+            <input class="form-control" name="usia" placeholder="Usia" required>
+          </div>
+          <div class="form-group">
+            <label for="usia">Laki-Laki</label>
+            <input class="form-control" name="lk" placeholder="Jumlah Laki-Laki" required>
+          </div>
+          <div class="form-group">
+            <label for="usia">Perempuan</label>
+            <input class="form-control" name="pr" placeholder="Jumlah Perempuan" required>
+          </div>
+          <div class="row">
+            <div class="form-group col-lg-3">
+              <label for="status_karyawan">Status Karyawan</label>
+              <select required name="status" class="form-control">
+                <option>PKWT</option>
+                <option>PKWTT</option>
+                <option>Harian</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="gaji">Gaji</label>
+            <input class="form-control" name="gaji" placeholder="Masukan Angka" required>
           </div>
       </div>
       <div class="modal-footer">

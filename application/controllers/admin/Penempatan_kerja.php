@@ -32,6 +32,8 @@ class Penempatan_kerja extends CI_controller
         $this->form_validation->set_rules('umur', 'Umur', 'required');
         $this->form_validation->set_rules('bulan', 'Bulan', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
+        $this->form_validation->set_rules('lk', 'Jumlah Laki-Laki', 'required');
+        $this->form_validation->set_rules('pr', 'Jumlah Perempuan', 'required');
         if ($this->form_validation->run() == FALSE) {
             redirect('admin/penempatan_kerja');
         } else {
@@ -41,10 +43,11 @@ class Penempatan_kerja extends CI_controller
             $penempatan = $this->input->post('penempatan', true);
             $pendidikan = $this->input->post('pendidikan', true);
             $umur = $this->input->post('umur', true);
-            $jk = $this->input->post('jk', true);
             $status = $this->input->post('status', true);
             $bulan = $this->input->post('bulan', true);
             $tahun = $this->input->post('tahun', true);
+            $lk = $this->input->post('lk', true);
+            $pr = $this->input->post('pr', true);
 
             $data = array(
                 'id_penempatan' => $id_penempatan,
@@ -53,10 +56,11 @@ class Penempatan_kerja extends CI_controller
                 'penempatan' => $penempatan,
                 'pendidikan' => $pendidikan,
                 'umur' => $umur,
-                'jk' => $jk,
                 'status' => $status,
                 'bulan' => $bulan,
-                'tahun' => $tahun
+                'tahun' => $tahun,
+                'lk' => $lk,
+                'pr' => $pr
             );
             $this->load->model('Model_penempatan_kerja');
             $this->Model_penempatan_kerja->tambah_data($data);
@@ -73,6 +77,8 @@ class Penempatan_kerja extends CI_controller
         $this->form_validation->set_rules('umur', 'Umur', 'required');
         $this->form_validation->set_rules('bulan', 'Bulan', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
+        $this->form_validation->set_rules('lk', 'Jumlah Laki-Laki', 'required');
+        $this->form_validation->set_rules('pr', 'Jumlah Perempuan', 'required');
         if ($this->form_validation->run() == FALSE) {
             redirect('admin/penempatan_kerja');
         } else {
@@ -82,10 +88,11 @@ class Penempatan_kerja extends CI_controller
             $penempatan = $this->input->post('penempatan', true);
             $pendidikan = $this->input->post('pendidikan', true);
             $umur = $this->input->post('umur', true);
-            $jk = $this->input->post('jk', true);
             $status = $this->input->post('status', true);
             $bulan = $this->input->post('bulan', true);
             $tahun = $this->input->post('tahun', true);
+            $lk = $this->input->post('lk', true);
+            $pr = $this->input->post('pr', true);
 
             $data = array(
                 'id_penempatan' => $id_penempatan,
@@ -94,10 +101,11 @@ class Penempatan_kerja extends CI_controller
                 'penempatan' => $penempatan,
                 'pendidikan' => $pendidikan,
                 'umur' => $umur,
-                'jk' => $jk,
                 'status' => $status,
                 'bulan' => $bulan,
-                'tahun' => $tahun
+                'tahun' => $tahun,
+                'lk' => $lk,
+                'pr' => $pr
             );
             $this->load->model('Model_penempatan_kerja');
             $this->Model_penempatan_kerja->ubah_data($data, $id_penempatan);
