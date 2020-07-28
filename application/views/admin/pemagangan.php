@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12" style="">
+            <div class="col-lg-12">
                 <h3 class="text-center">Data Magang</h3>
                 <hr>
                 <div class="panel-heading">
