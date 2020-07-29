@@ -181,7 +181,8 @@
           </a>
           <div class="collapse" id="collapse5">
             <ul>
-              <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_kerja">Penempatan Kerja</a></li>
+              <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_kerja/perusahaan">Penempatan Kerja</a></li>
+              <li><a class="nav-link" href="<?= base_url(); ?>admin/wajib_lapor_loker/perusahaan">Wajib Lapor Lowongan Kerja</a></li>
             </ul>
           </div>
         </li>

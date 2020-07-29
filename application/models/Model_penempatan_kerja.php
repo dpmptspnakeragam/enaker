@@ -33,4 +33,32 @@ class Model_penempatan_kerja extends CI_model
         $this->db->where('id_penempatan', $id);
         $this->db->delete('penempatan_kerja');
     }
+
+    public function company()
+    {
+        $this->db->select('*');
+        $this->db->from('company');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function tampil_perusahaan()
+    {
+        $perusahaan = $_SESSION['nama'];
+        $this->db->select('*');
+        $this->db->from('penempatan_kerja');
+        $this->db->where('nama_perusahaan', $perusahaan);
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function nama_perusahaan()
+    {
+        $perusahaan = $_SESSION['nama'];
+        $this->db->select('*');
+        $this->db->from('company');
+        $this->db->where('nama_company', $perusahaan);
+        $query = $this->db->get()->result();
+        return $query;
+    }
 }

@@ -16,11 +16,27 @@ class Penempatan_kerja extends CI_controller
         $this->load->model('Model_penempatan_kerja');
         $data['penempatan'] = $this->Model_penempatan_kerja->tampil_data();
         $data['idmax'] = $this->Model_penempatan_kerja->idmax();
+        $data['company'] = $this->Model_penempatan_kerja->company();
         $this->load->view('templates/header_admin');
         $this->load->view('templates/navbar_admin');
         $this->load->view('admin/penempatan_kerja', $data);
         $this->load->view('modals/tambah_penempatan');
         $this->load->view('edit/edit_penempatan', $data);
+        $this->load->view('templates/footer_admin');
+    }
+
+    public function perusahaan()
+    {
+        $this->load->model('Model_penempatan_kerja');
+        $data['penempatan'] = $this->Model_penempatan_kerja->tampil_perusahaan();
+        $data['idmax'] = $this->Model_penempatan_kerja->idmax();
+        $data['company'] = $this->Model_penempatan_kerja->company();
+        $data['nama_perusahaan'] = $this->Model_penempatan_kerja->nama_perusahaan();
+        $this->load->view('templates/header_admin');
+        $this->load->view('templates/navbar_admin');
+        $this->load->view('admin/penempatan_kerja_perusahaan', $data);
+        $this->load->view('modals/tambah_penempatan_perusahaan');
+        $this->load->view('edit/edit_penempatan_perusahaan', $data);
         $this->load->view('templates/footer_admin');
     }
 
@@ -65,7 +81,7 @@ class Penempatan_kerja extends CI_controller
             $this->load->model('Model_penempatan_kerja');
             $this->Model_penempatan_kerja->tambah_data($data);
             $this->session->set_flashdata("berhasil", "Tambah data <b>$nama_perusahaan</b> berhasil !");
-            redirect('admin/penempatan_kerja');
+            echo '<script>history.back(self)</script>';
         }
     }
 
@@ -110,7 +126,7 @@ class Penempatan_kerja extends CI_controller
             $this->load->model('Model_penempatan_kerja');
             $this->Model_penempatan_kerja->ubah_data($data, $id_penempatan);
             $this->session->set_flashdata("berhasil", "Ubah data <b>$nama_perusahaan</b> berhasil !");
-            redirect('admin/penempatan_kerja');
+            echo '<script>history.back(self)</script>';
         }
     }
 
@@ -124,6 +140,6 @@ class Penempatan_kerja extends CI_controller
         $this->Model_penempatan_kerja->delete($id_penempatan);
         $this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_perusahaan</b> berhasil !");
 
-        redirect('admin/penempatan_kerja');
+        echo '<script>history.back(self)</script>';
     }
 }

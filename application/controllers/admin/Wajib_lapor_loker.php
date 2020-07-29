@@ -16,11 +16,27 @@ class Wajib_lapor_loker extends CI_controller
 		$this->load->model('Model_wajib_lapor_loker');
 		$data['wl_naker'] = $this->Model_wajib_lapor_loker->tampil_data();
 		$data['idmax'] = $this->Model_wajib_lapor_loker->idmax();
+		$data['company'] = $this->Model_wajib_lapor_loker->company();
 		$this->load->view('templates/header_admin');
 		$this->load->view('templates/navbar_admin');
-		$this->load->view('admin/wajib_lapor_loker', $data);
+		$this->load->view('admin/wajib_lapor_loker_perusahaan', $data);
 		$this->load->view('modals/tambah_wl');
 		$this->load->view('edit/edit_wl', $data);
+		$this->load->view('templates/footer_admin');
+	}
+
+	public function perusahaan()
+	{
+		$this->load->model('Model_wajib_lapor_loker');
+		$data['wl_naker'] = $this->Model_wajib_lapor_loker->tampil_perusahaan();
+		$data['idmax'] = $this->Model_wajib_lapor_loker->idmax();
+		$data['company'] = $this->Model_wajib_lapor_loker->company();
+		$data['nama_perusahaan'] = $this->Model_wajib_lapor_loker->nama_perusahaan();
+		$this->load->view('templates/header_admin');
+		$this->load->view('templates/navbar_admin');
+		$this->load->view('admin/wajib_lapor_loker_perusahaan', $data);
+		$this->load->view('modals/tambah_wl_perusahaan');
+		$this->load->view('edit/edit_wl_perusahaan', $data);
 		$this->load->view('templates/footer_admin');
 	}
 
@@ -62,7 +78,7 @@ class Wajib_lapor_loker extends CI_controller
 			$this->load->model('Model_wajib_lapor_loker');
 			$this->Model_wajib_lapor_loker->tambah_data($data);
 			$this->session->set_flashdata("berhasil", "Tambah data <b>$nama_perusahaan</b> berhasil !");
-			redirect('admin/wajib_lapor_loker');
+			echo '<script>history.back(self)</script>';
 		}
 	}
 
@@ -104,7 +120,7 @@ class Wajib_lapor_loker extends CI_controller
 			$this->load->model('Model_wajib_lapor_loker');
 			$this->Model_wajib_lapor_loker->ubah_data($data, $id_perusahaan);
 			$this->session->set_flashdata("berhasil", "Ubah data <b>$nama_perusahaan</b> berhasil !");
-			redirect('admin/wajib_lapor_loker');
+			echo '<script>history.back(self)</script>';
 		}
 	}
 
@@ -118,6 +134,6 @@ class Wajib_lapor_loker extends CI_controller
 		$this->Model_wajib_lapor_loker->delete($id_perusahaan);
 		$this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_perusahaan</b> berhasil !");
 
-		redirect('admin/wajib_lapor_loker');
+		echo '<script>history.back(self)</script>';
 	}
 }

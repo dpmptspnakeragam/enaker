@@ -1,14 +1,14 @@
-<div class="modal fade" id="ModalPenempatan" tabindex="-1" role="dialog" aria-labelledby="ModalPenempatan" aria-hidden="true">
+<div class="modal fade" id="ModalWajibLapor" tabindex="-1" role="dialog" aria-labelledby="ModalWajibLapor" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-light">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Penempatan Kerja</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Wajib Lapor</h5>
                 <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form role="form" action="<?= base_url(); ?>admin/penempatan_kerja/tambah" method="post" enctype="multipart/form-data">
+                <form role="form" action="<?= base_url(); ?>admin/wajib_lapor_loker/tambah" method="post" enctype="multipart/form-data">
                     <?php foreach ($idmax->result() as $row) {
                     ?>
                         <div class="form-group" hidden>
@@ -17,13 +17,11 @@
                         </div>
                     <?php } ?>
                     <div class="form-group">
-                        <label class="control-label" for="nama_sekolah">Nama Perusahaan</label>
-                        <select required name="nama_perusahaan" class="form-control">
-                            <?php foreach ($company->result() as $row) {
-                            ?>
-                                <option value="<?= $row->nama_company; ?>"><?= $row->nama_company; ?></option>
-                            <?php } ?>
-                        </select>
+                        <label for="nama_perusahaan">Nama Perusahaan</label>
+                        <?php foreach ($nama_perusahaan as $row) {
+                        ?>
+                            <input readonly class="form-control" name="nama_perusahaan" placeholder="" value="<?php echo $row->nama_company; ?>" required>
+                        <?php } ?>
                     </div>
                     <div class="form-group">
                         <label for="posisi">Posisi</label>
@@ -35,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3">
-                            <label>Pendidikan</label>
+                            <label>Pendidikan Terakhir</label>
                             <select required name="pendidikan" class="form-control">
                                 <option>Tidak Sekolah</option>
                                 <option>SD / Sederajat</option>
@@ -47,8 +45,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="usia">Usia</label>
-                        <input class="form-control" name="umur" placeholder="Usia" required>
+                        <label for="usia">Usia Minimal</label>
+                        <input class="form-control" name="usia" placeholder="Usia" required>
                     </div>
                     <div class="form-group">
                         <label for="usia">Laki-Laki</label>
@@ -69,12 +67,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="gaji">Bulan</label>
-                        <input class="form-control" name="bulan" placeholder="Masukan Bulan" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gaji">Tahun</label>
-                        <input class="form-control" name="tahun" placeholder="Masukan Tahun" required>
+                        <label for="gaji">Gaji</label>
+                        <input class="form-control" name="gaji" placeholder="Masukan Angka" required>
                     </div>
             </div>
             <div class="modal-footer">

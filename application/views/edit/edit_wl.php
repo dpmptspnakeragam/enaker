@@ -17,8 +17,13 @@
             </div>
             <div class="form-group">
               <label for="nama_perusahaan">Nama Perusahaan</label>
-              <input class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" value="<?php echo $row->nama_perusahaan; ?>" required>
-
+              <select required name="nama_perusahaan" class="form-control">
+                <option value="<?php echo $row->nama_perusahaan; ?>" selected><?php echo $row->nama_perusahaan; ?></option>
+                <?php foreach ($company->result() as $row2) {
+                ?>
+                  <option value="<?= $row2->nama_company; ?>"><?= $row2->nama_company; ?></option>
+                <?php } ?>
+              </select>
             </div>
             <div class="form-group">
               <label for="posisi">Posisi</label>

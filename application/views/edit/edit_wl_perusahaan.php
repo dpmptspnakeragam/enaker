@@ -1,29 +1,26 @@
-<?php foreach ($penempatan->result() as $row) {
+<?php foreach ($wl_naker->result() as $row) {
 ?>
-    <div class="modal fade" id="EditPenempatan<?php echo $row->id_penempatan; ?>" tabindex="-1" role="dialog" aria-labelledby="ModalPenempatan" aria-hidden="true">
+    <div class="modal fade" id="EditPerusahaan<?php echo $row->id_perusahaan; ?>" tabindex="-1" role="dialog" aria-labelledby="ModalPerusahaanLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Bursa Khusus</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Wajib Lapor</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" action="<?= base_url(); ?>admin/penempatan_kerja/ubah" method="post" enctype="multipart/form-data">
+                    <form role="form" action="<?= base_url(); ?>admin/wajib_lapor_loker/ubah" method="post" enctype="multipart/form-data">
                         <div class="form-group" hidden>
                             <label>Id</label>
-                            <input type="text" class="form-control" id="id" name="id_penempatan" value="<?php echo $row->id_penempatan; ?>">
+                            <input type="text" class="form-control" id="id" name="id_perusahaan" value="<?php echo $row->id_perusahaan; ?>">
                         </div>
                         <div class="form-group">
                             <label for="nama_perusahaan">Nama Perusahaan</label>
-                            <select required name="nama_perusahaan" class="form-control">
-                                <option value="<?php echo $row->nama_perusahaan; ?>" selected><?php echo $row->nama_perusahaan; ?></option>
-                                <?php foreach ($company->result() as $row2) {
-                                ?>
-                                    <option value="<?= $row2->nama_company; ?>"><?= $row2->nama_company; ?></option>
-                                <?php } ?>
-                            </select>
+                            <?php foreach ($nama_perusahaan as $row2) {
+                            ?>
+                                <input readonly class="form-control" name="nama_perusahaan" placeholder="Jumlah Laki-laki" value="<?php echo $row2->nama_company; ?>" required>
+                            <?php } ?>
                         </div>
                         <div class="form-group">
                             <label for="posisi">Posisi</label>
@@ -35,7 +32,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-3">
-                                <label>Pendidikan</label>
+                                <label>Pendidikan Terakhir</label>
                                 <select required name="pendidikan" class="form-control" value="<?php echo $row->pendidikan; ?>">
                                     <option value="<?php echo $row->pendidikan; ?>" selected><?php echo $row->pendidikan; ?></option>
                                     <option>Tidak Sekolah</option>
@@ -48,8 +45,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="usia">Usia</label>
-                            <input class="form-control" name="umur" placeholder="Usia" value="<?php echo $row->umur; ?>" required>
+                            <label for="usia">Usia Minimal</label>
+                            <input class="form-control" name="usia" placeholder="Usia" value="<?php echo $row->usia; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="usia">Laki-Laki</label>
@@ -71,12 +68,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="bulan">Bulan</label>
-                            <input class="form-control" name="bulan" placeholder="Masukan Bulan" value="<?php echo $row->bulan; ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tahun">Tahun</label>
-                            <input class="form-control" name="tahun" placeholder="Masukan Tahun" value="<?php echo $row->tahun; ?>" required>
+                            <label for="gaji">Gaji</label>
+                            <input class="form-control" name="gaji" placeholder="Masukan Angka" value="<?php echo $row->gaji; ?>" required>
                         </div>
                 </div>
                 <div class="modal-footer">
