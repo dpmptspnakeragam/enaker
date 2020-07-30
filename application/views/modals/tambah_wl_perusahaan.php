@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="usia">Usia Minimal</label>
+                        <label for="usia">Usia Maksimal</label>
                         <input class="form-control" name="usia" placeholder="Usia" required>
                     </div>
                     <div class="form-group">
@@ -69,6 +69,10 @@
                     <div class="form-group">
                         <label for="gaji">Gaji</label>
                         <input class="form-control" name="gaji" placeholder="Masukan Angka" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="tanggal">Tanggal Buka</label>
+                        <input class="form-control col-lg-3" type="date" name="tanggal">
                     </div>
             </div>
             <div class="modal-footer">

@@ -19,7 +19,7 @@ class Wajib_lapor_loker extends CI_controller
 		$data['company'] = $this->Model_wajib_lapor_loker->company();
 		$this->load->view('templates/header_admin');
 		$this->load->view('templates/navbar_admin');
-		$this->load->view('admin/wajib_lapor_loker_perusahaan', $data);
+		$this->load->view('admin/wajib_lapor_loker', $data);
 		$this->load->view('modals/tambah_wl');
 		$this->load->view('edit/edit_wl', $data);
 		$this->load->view('templates/footer_admin');
@@ -62,6 +62,7 @@ class Wajib_lapor_loker extends CI_controller
 			$gaji = $this->input->post('gaji', true);
 			$lk = $this->input->post('lk', true);
 			$pr = $this->input->post('pr', true);
+			$tanggal = $this->input->post('tanggal', true);
 
 			$data = array(
 				'id_perusahaan' => $id_perusahaan,
@@ -73,7 +74,8 @@ class Wajib_lapor_loker extends CI_controller
 				'status' => $status,
 				'gaji' => $gaji,
 				'lk' => $lk,
-				'pr' => $pr
+				'pr' => $pr,
+				'tanggal' => $tanggal
 			);
 			$this->load->model('Model_wajib_lapor_loker');
 			$this->Model_wajib_lapor_loker->tambah_data($data);
@@ -104,6 +106,7 @@ class Wajib_lapor_loker extends CI_controller
 			$gaji = $this->input->post('gaji', true);
 			$lk = $this->input->post('lk', true);
 			$pr = $this->input->post('pr', true);
+			$tanggal = $this->input->post('tanggal', true);
 
 			$data = array(
 				'id_perusahaan' => $id_perusahaan,
@@ -115,7 +118,8 @@ class Wajib_lapor_loker extends CI_controller
 				'status' => $status,
 				'gaji' => $gaji,
 				'lk' => $lk,
-				'pr' => $pr
+				'pr' => $pr,
+				'tanggal' => $tanggal
 			);
 			$this->load->model('Model_wajib_lapor_loker');
 			$this->Model_wajib_lapor_loker->ubah_data($data, $id_perusahaan);

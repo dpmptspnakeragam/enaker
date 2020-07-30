@@ -72,7 +72,21 @@
                         </div>
                         <div class="form-group">
                             <label for="bulan">Bulan</label>
-                            <input class="form-control" name="bulan" placeholder="Masukan Bulan" value="<?php echo $row->bulan; ?>" required>
+                            <select required name="bulan" class="form-control" required>
+                                <option value="<?php echo $row->bulan; ?>" selected><?php echo $row->bulan; ?></option>
+                                <option>Januari</option>
+                                <option>Februari</option>
+                                <option>Maret</option>
+                                <option>April</option>
+                                <option>Mei</option>
+                                <option>Juni</option>
+                                <option>Juli</option>
+                                <option>Agustus</option>
+                                <option>September</option>
+                                <option>Oktober</option>
+                                <option>November</option>
+                                <option>Desember</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="tahun">Tahun</label>

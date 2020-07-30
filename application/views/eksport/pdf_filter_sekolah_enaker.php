@@ -86,4 +86,3 @@ $pdf->Output('Laporan_Data_Bursa_Kerja_Khusus.pdf', 'D');
 	</script>
 	";
 }
-?>

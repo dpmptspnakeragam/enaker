@@ -34,7 +34,7 @@
                         </div>
                     <?php endif; ?>
                     <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalBKK"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
-                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalFilterSekolah"><i class="fa fa-file fa-fw"></i> Filter Sekolah</button>
+                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalCetakPenempatan"><i class="fa fa-file fa-fw"></i> Cetak Data</button>
                 </div><br>
                 <!-- start: Accordion -->
                 <div class="table-responsive">
@@ -48,6 +48,8 @@
                                 <th class="text-center" width="100">Jurusan</th>
                                 <th class="text-center" width="50">Posisi</th>
                                 <th class="text-center" width="50">Perusahaan</th>
+                                <th class="text-center" width="50">Bulan</th>
+                                <th class="text-center" width="50">Tahun</th>
                                 <th class="text-center" width="50"><i class="fa fa-cog"></i> Action</th>
                             </tr>
                         </thead>
@@ -62,6 +64,8 @@
                                     <td><?= $row->jurusan; ?></td>
                                     <td><?= $row->posisi; ?></td>
                                     <td><?= $row->perusahaan; ?></td>
+                                    <td><?= $row->bulan; ?></td>
+                                    <td><?= $row->tahun; ?></td>
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <a class="btn btn-outline-warning btn-sm btn-circle" href="#" data-toggle="modal" data-target="#EditBkk<?php echo $row->id_bkk; ?>" title="Edit"><i class="fa fa-edit"></i></a>

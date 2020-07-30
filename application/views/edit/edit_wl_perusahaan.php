@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="usia">Usia Minimal</label>
+                            <label for="usia">Usia Maksimal</label>
                             <input class="form-control" name="usia" placeholder="Usia" value="<?php echo $row->usia; ?>" required>
                         </div>
                         <div class="form-group">
@@ -70,6 +70,10 @@
                         <div class="form-group">
                             <label for="gaji">Gaji</label>
                             <input class="form-control" name="gaji" placeholder="Masukan Angka" value="<?php echo $row->gaji; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="tanggal">Tanggal Buka</label>
+                            <input class="form-control col-lg-3" type="date" name="tanggal" value="<?php echo $row->tanggal; ?>">
                         </div>
                 </div>
                 <div class="modal-footer">

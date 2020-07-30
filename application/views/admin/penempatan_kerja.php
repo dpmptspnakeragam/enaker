@@ -34,6 +34,7 @@
                         </div>
                     <?php endif; ?>
                     <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalPenempatan"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
+                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalCetakPenempatan"><i class="fa fa-file fa-fw"></i> Cetak Data</button>
                 </div><br>
                 <!-- start: Accordion -->
                 <div class="table-responsive">
@@ -44,7 +45,7 @@
                                 <th class="text-center" rowspan="2">Posisi</th>
                                 <th class="text-center" rowspan="2">Penempatan</th>
                                 <th class="text-center" rowspan="2">Pendidikan Terakhir</th>
-                                <th class="text-center" rowspan="2">Usia</th>
+                                <th class="text-center" rowspan="2">Usia (Tahun)</th>
                                 <th class="text-center" colspan="2">Jenis Kelamin</th>
                                 <th class="text-center" rowspan="2">Status Karyawan</th>
                                 <th class="text-center" rowspan="2">Bulan</th>
@@ -52,8 +53,8 @@
                                 <th class="text-center" rowspan="2"><i class="fa fa-cog"></i> Action</th>
                             </tr>
                             <tr>
-                                <th class="text-center">Laki-Laki</th>
-                                <th class="text-center">Perempuan</th>
+                                <th class="text-center">Laki-Laki (Orang)</th>
+                                <th class="text-center">Perempuan (Orang)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,8 +66,8 @@
                                     <td><?= $row->penempatan; ?></td>
                                     <td><?= $row->pendidikan; ?></td>
                                     <td><?= $row->umur; ?></td>
-                                    <td><?= $row->lk; ?> Orang</td>
-                                    <td><?= $row->pr; ?> Orang</td>
+                                    <td><?= $row->lk; ?></td>
+                                    <td><?= $row->pr; ?> </td>
                                     <td><?= $row->status; ?></td>
                                     <td><?= $row->bulan; ?></td>
                                     <td><?= $row->tahun; ?></td>

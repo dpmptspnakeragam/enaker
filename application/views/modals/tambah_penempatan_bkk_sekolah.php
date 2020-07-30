@@ -50,6 +50,27 @@
                         <label class="control-label" for="perusahaan">Perusahaan</label>
                         <input class="form-control" name="perusahaan" placeholder="Masukkan Perusahaan" required>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label" for="bulan">Bulan</label>
+                        <select required name="bulan" class="form-control" required>
+                            <option>Januari</option>
+                            <option>Februari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="tahun">Tahun</label>
+                        <input class="form-control" name="tahun" placeholder="Masukkan tahun" required>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

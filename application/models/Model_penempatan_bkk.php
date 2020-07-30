@@ -72,11 +72,21 @@ class Model_penempatan_bkk extends CI_model
         return $query;
     }
 
-    public function cetak_bk($sekolah, $tahun)
+    public function cetak_bkk($bulan, $tahun)
     {
         $this->db->select('*');
         $this->db->from('penempatan_bkk');
-        $where = ['sekolah' => $sekolah, 'tahun' => $tahun];
+        $where = ['bulan' => $bulan, 'tahun' => $tahun];
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function cetak_bkk_sekolah($bulan, $tahun, $sekolah)
+    {
+        $this->db->select('*');
+        $this->db->from('penempatan_bkk');
+        $where = ['bulan' => $bulan, 'tahun' => $tahun, 'nama_sekolah' => $sekolah];
         $this->db->where($where);
         $query = $this->db->get();
         return $query;

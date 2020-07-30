@@ -68,7 +68,20 @@
                     </div>
                     <div class="form-group">
                         <label for="gaji">Bulan</label>
-                        <input class="form-control" name="bulan" placeholder="Masukan Bulan" required>
+                        <select required name="bulan" class="form-control" required>
+                            <option>Januari</option>
+                            <option>Februari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="gaji">Tahun</label>

@@ -23,6 +23,7 @@ class Penempatan_bkk extends CI_controller
         $this->load->view('admin/penempatan_bkk', $data);
         $this->load->view('modals/tambah_penempatan_bkk');
         $this->load->view('edit/edit_penempatan_bkk', $data);
+        $this->load->view('modals/cetak_penempatan_bkk');
         $this->load->view('templates/footer_admin');
     }
 
@@ -38,7 +39,7 @@ class Penempatan_bkk extends CI_controller
         $this->load->view('admin/penempatan_bkk_sekolah', $data);
         $this->load->view('modals/tambah_penempatan_bkk_sekolah');
         $this->load->view('edit/edit_penempatan_bkk_sekolah', $data);
-        $this->load->view('modals/cetak_filter_sekolah', $data);
+        $this->load->view('modals/cetak_penempatan_bkk_sekolah', $data);
         $this->load->view('templates/footer_admin');
     }
 
@@ -61,6 +62,8 @@ class Penempatan_bkk extends CI_controller
             $posisi = $this->input->post('posisi', true);
             $perusahaan = $this->input->post('perusahaan', true);
             $nama_sekolah = $this->input->post('nama_sekolah', true);
+            $bulan = $this->input->post('bulan', true);
+            $tahun = $this->input->post('tahun', true);
 
             $data = array(
                 'id_bkk' => $id,
@@ -71,6 +74,8 @@ class Penempatan_bkk extends CI_controller
                 'posisi' => $posisi,
                 'perusahaan' => $perusahaan,
                 'nama_sekolah' => $nama_sekolah,
+                'bulan' => $bulan,
+                'tahun' => $tahun
             );
 
             $this->load->model('Model_penempatan_bkk');
@@ -99,6 +104,8 @@ class Penempatan_bkk extends CI_controller
             $posisi = $this->input->post('posisi', true);
             $perusahaan = $this->input->post('perusahaan', true);
             $nama_sekolah = $this->input->post('nama_sekolah', true);
+            $bulan = $this->input->post('bulan', true);
+            $tahun = $this->input->post('tahun', true);
 
             $data = array(
                 'id_bkk' => $id,
@@ -109,6 +116,8 @@ class Penempatan_bkk extends CI_controller
                 'posisi' => $posisi,
                 'perusahaan' => $perusahaan,
                 'nama_sekolah' => $nama_sekolah,
+                'bulan' => $bulan,
+                'tahun' => $tahun
             );
 
             $this->load->model('Model_penempatan_bkk');
@@ -132,11 +141,21 @@ class Penempatan_bkk extends CI_controller
     public function cetak()
     {
         $this->load->library('Pdf');
-        $sekolah = $this->input->post('sekolah', true);
+        $bulan = $this->input->post('bulan', true);
         $tahun = $this->input->post('tahun', true);
         $this->load->model('Model_penempatan_bkk');
-        $data['get_sekolah'] = $this->Model_penempatan_bkk->get_sekolah($sekolah);
-        $data['cetak_bk'] = $this->Model_penempatan_bkk->cetak_bk($sekolah, $tahun);
-        $this->load->view('eksport/pdf_filter_sekolah_enaker', $data);
+        $data['cetak_bkk'] = $this->Model_penempatan_bkk->cetak_bkk($bulan, $tahun);
+        $this->load->view('eksport/pdf_penempatan_bkk', $data);
+    }
+
+    public function cetak_sekolah()
+    {
+        $this->load->library('Pdf');
+        $bulan = $this->input->post('bulan', true);
+        $tahun = $this->input->post('tahun', true);
+        $sekolah = $this->input->post('nama_sekolah', true);
+        $this->load->model('Model_penempatan_bkk');
+        $data['cetak_bkk'] = $this->Model_penempatan_bkk->cetak_bkk_sekolah($bulan, $tahun, $sekolah);
+        $this->load->view('eksport/pdf_penempatan_bkk', $data);
     }
 }

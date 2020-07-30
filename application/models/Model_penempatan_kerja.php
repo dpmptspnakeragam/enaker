@@ -61,4 +61,24 @@ class Model_penempatan_kerja extends CI_model
         $query = $this->db->get()->result();
         return $query;
     }
+
+    public function cetak_penempatan($bulan, $tahun)
+    {
+        $this->db->select('*');
+        $this->db->from('penempatan_kerja');
+        $where = ['bulan' => $bulan, 'tahun' => $tahun];
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function cetak_penempatan_perusahaan($bulan, $tahun, $perusahaan)
+    {
+        $this->db->select('*');
+        $this->db->from('penempatan_kerja');
+        $where = ['bulan' => $bulan, 'tahun' => $tahun, 'nama_perusahaan' => $perusahaan];
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
+    }
 }

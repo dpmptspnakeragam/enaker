@@ -21,6 +21,7 @@ class Penempatan_kerja extends CI_controller
         $this->load->view('templates/navbar_admin');
         $this->load->view('admin/penempatan_kerja', $data);
         $this->load->view('modals/tambah_penempatan');
+        $this->load->view('modals/cetak_penempatan_kerja');
         $this->load->view('edit/edit_penempatan', $data);
         $this->load->view('templates/footer_admin');
     }
@@ -141,5 +142,26 @@ class Penempatan_kerja extends CI_controller
         $this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_perusahaan</b> berhasil !");
 
         echo '<script>history.back(self)</script>';
+    }
+
+    public function cetak()
+    {
+        $this->load->library('Pdf');
+        $bulan = $this->input->post('bulan', true);
+        $tahun = $this->input->post('tahun', true);
+        $this->load->model('Model_penempatan_kerja');
+        $data['cetak_penempatan'] = $this->Model_penempatan_kerja->cetak_penempatan($bulan, $tahun);
+        $this->load->view('eksport/pdf_penempatan_kerja', $data);
+    }
+
+    public function cetak_perusahaan()
+    {
+        $this->load->library('Pdf');
+        $bulan = $this->input->post('bulan', true);
+        $tahun = $this->input->post('tahun', true);
+        $perusahaan = $this->input->post('nama_perusahaan', true);
+        $this->load->model('Model_penempatan_kerja');
+        $data['cetak_penempatan'] = $this->Model_penempatan_kerja->cetak_penempatan_perusahaab($bulan, $tahun, $perusahaan);
+        $this->load->view('eksport/pdf_penempatan_kerja', $data);
     }
 }

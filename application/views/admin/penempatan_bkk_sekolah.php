@@ -38,7 +38,7 @@
                         </div>
                     <?php endif; ?>
                     <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalBKK"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
-                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalFilterSekolah"><i class="fa fa-file fa-fw"></i> Filter Sekolah</button>
+                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalCetakPenempatan"><i class="fa fa-file fa-fw"></i> Filter Sekolah</button>
                 </div><br>
                 <!-- start: Accordion -->
                 <div class="table-responsive">
