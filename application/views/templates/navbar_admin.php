@@ -102,7 +102,7 @@
           <div class="collapse" id="collapse5">
             <ul>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/pencaker">Data Pencari Kerja</a></li>
-              <li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_kerja">Bursa Kerja</a></li>
+              <!---<li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_kerja">Bursa Kerja</a></li>--->
               <li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_khusus">Bursa Kerja Khusus</a></li>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_kerja">Penempatan Kerja</a></li>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/wajib_lapor_loker">Wajib Lapor Lowongan Kerja</a></li>
@@ -162,7 +162,7 @@
           </a>
           <div class="collapse" id="collapse5">
             <ul>
-              <li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_khusus/bursa_khusus_sekolah">Bursa Kerja Khusus</a></li>
+              <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_bkk/bkk_sekolah">Bursa Kerja Khusus</a></li>
             </ul>
           </div>
         </li>
@@ -261,19 +261,19 @@
           <div class="collapse" id="collapse5">
             <ul>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/pencaker">Data Pencari Kerja</a></li>
-              <li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_kerja">Bursa Kerja</a></li>
-              <li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_khusus">Bursa Kerja Khusus</a></li>
+              <!---<li><a class="nav-link" href="<?= base_url(); ?>admin/bursa_kerja">Bursa Kerja</a></li>--->
+              <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_bkk">Bursa Kerja Khusus</a></li>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/penempatan_kerja">Penempatan Kerja</a></li>
               <li><a class="nav-link" href="<?= base_url(); ?>admin/wajib_lapor_loker">Wajib Lapor Lowongan Kerja</a></li>
             </ul>
           </div>
         </li>
-        <li class="nav-item">
+        <!---<li class="nav-item">
           <a class="nav-link" href="<?= base_url(); ?>admin/galeri">
             <span data-feather="camera"></span>
             Foto Kegiatan
           </a>
-        </li>
+        </li>--->
         </ul>
       <?php } ?>
       </ul>
