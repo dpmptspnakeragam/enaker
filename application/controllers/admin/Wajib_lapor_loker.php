@@ -21,6 +21,7 @@ class Wajib_lapor_loker extends CI_controller
 		$this->load->view('templates/navbar_admin');
 		$this->load->view('admin/wajib_lapor_loker', $data);
 		$this->load->view('modals/tambah_wl');
+		$this->load->view('modals/cetak_wl_loker');
 		$this->load->view('edit/edit_wl', $data);
 		$this->load->view('templates/footer_admin');
 	}
@@ -36,6 +37,7 @@ class Wajib_lapor_loker extends CI_controller
 		$this->load->view('templates/navbar_admin');
 		$this->load->view('admin/wajib_lapor_loker_perusahaan', $data);
 		$this->load->view('modals/tambah_wl_perusahaan');
+		$this->load->view('modals/cetak_wl_loker_perusahaan');
 		$this->load->view('edit/edit_wl_perusahaan', $data);
 		$this->load->view('templates/footer_admin');
 	}
@@ -139,5 +141,26 @@ class Wajib_lapor_loker extends CI_controller
 		$this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_perusahaan</b> berhasil !");
 
 		echo '<script>history.back(self)</script>';
+	}
+
+	public function cetak()
+	{
+		$this->load->library('Pdf');
+		$tgl_awal = $this->input->post('tgl_awal', true);
+		$tgl_akhir = $this->input->post('tgl_akhir', true);
+		$this->load->model('Model_wajib_lapor_loker');
+		$data['cetak_wl_loker'] = $this->Model_wajib_lapor_loker->cetak_wl_loker($tgl_awal, $tgl_akhir);
+		$this->load->view('eksport/pdf_wl_loker', $data);
+	}
+
+	public function cetak_wl_loker()
+	{
+		$this->load->library('Pdf');
+		$tgl_awal = $this->input->post('tgl_awal', true);
+		$tgl_akhir = $this->input->post('tgl_akhir', true);
+		$perusahaan = $this->input->post('nama_perusahaan', true);
+		$this->load->model('Model_wajib_lapor_loker');
+		$data['cetak_wl_loker'] = $this->Model_wajib_lapor_loker->cetak_wl_loker_perusahaan($tgl_awal, $tgl_akhir, $perusahaan);
+		$this->load->view('eksport/pdf_wl_loker', $data);
 	}
 }

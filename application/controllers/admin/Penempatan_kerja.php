@@ -37,6 +37,7 @@ class Penempatan_kerja extends CI_controller
         $this->load->view('templates/navbar_admin');
         $this->load->view('admin/penempatan_kerja_perusahaan', $data);
         $this->load->view('modals/tambah_penempatan_perusahaan');
+        $this->load->view('modals/cetak_penempatan_kerja_perusahaan');
         $this->load->view('edit/edit_penempatan_perusahaan', $data);
         $this->load->view('templates/footer_admin');
     }
@@ -161,7 +162,7 @@ class Penempatan_kerja extends CI_controller
         $tahun = $this->input->post('tahun', true);
         $perusahaan = $this->input->post('nama_perusahaan', true);
         $this->load->model('Model_penempatan_kerja');
-        $data['cetak_penempatan'] = $this->Model_penempatan_kerja->cetak_penempatan_perusahaab($bulan, $tahun, $perusahaan);
+        $data['cetak_penempatan'] = $this->Model_penempatan_kerja->cetak_penempatan_perusahaan($bulan, $tahun, $perusahaan);
         $this->load->view('eksport/pdf_penempatan_kerja', $data);
     }
 }

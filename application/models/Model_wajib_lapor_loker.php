@@ -61,4 +61,25 @@ class Model_wajib_lapor_loker extends CI_model
 		$query = $this->db->get()->result();
 		return $query;
 	}
+
+	public function cetak_wl_loker($tgl_awal, $tgl_akhir)
+	{
+		$this->db->select('*');
+		$this->db->from('perusahaan_naker');
+		$this->db->where('tanggal >=', $tgl_awal);
+		$this->db->where('tanggal <=', $tgl_akhir);
+		$query = $this->db->get();
+		return $query;
+	}
+
+	public function cetak_wl_loker_perusahaan($tgl_awal, $tgl_akhir, $perusahaan)
+	{
+		$this->db->select('*');
+		$this->db->from('perusahaan_naker');
+		$this->db->where('tanggal >=', $tgl_awal);
+		$this->db->where('tanggal <=', $tgl_akhir);
+		$this->db->where('perusahaan', $perusahaan);
+		$query = $this->db->get();
+		return $query;
+	}
 }

@@ -37,6 +37,7 @@
                         </div>
                     <?php endif; ?>
                     <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#ModalPenempatan"><i class="fa fa-plus fa-fw"></i>Tambah Data</button>
+                    <button href="#" class="btn btn-outline-danger btn-sm" type="button" data-toggle="modal" data-target="#ModalCetakPenempatan"><i class="fa fa-file fa-fw"></i> Cetak Data</button>
                 </div><br>
                 <!-- start: Accordion -->
                 <div class="table-responsive">
