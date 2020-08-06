@@ -1,11 +1,18 @@
 <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?= base_url(); ?>admin/home">
     <img src="<?= base_url(); ?>assets/img/logoenaker(new)putih.png" width="30px" height="30px" alt="Logo Naker"> e-Naker</a>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="<?= base_url(); ?>admin/home/logout"><i class="fa fa-sign-out-alt"></i> Log Out</a>
+  <ul class="navbar-nav mr-auto px-3">
+    <li class="nav-item text-light">
+      <i class="fa fa-user"></i> | <b><?= $_SESSION['nama']; ?></b>
     </li>
   </ul>
+  <span class="navbar-text px-3">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url(); ?>admin/home/logout"><i class="fa fa-sign-out-alt"></i> Keluar</a>
+      </li>
+    </ul>
+  </span>
 </nav>
 
 <div class="container-fluid">

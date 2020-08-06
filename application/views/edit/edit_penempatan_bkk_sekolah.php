@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" action="<?= base_url(); ?>admin/penempatan_bkk/tambah" method="post" enctype="multipart/form-data">
+                    <form role="form" action="<?= base_url(); ?>admin/penempatan_bkk/ubah" method="post" enctype="multipart/form-data">
                         <div class="form-group" hidden>
                             <label class=" control-label">Id</label>
                             <input type="text" class="form-control" id="id" name="id_bkk" value="<?php echo $row->id_bkk; ?>">

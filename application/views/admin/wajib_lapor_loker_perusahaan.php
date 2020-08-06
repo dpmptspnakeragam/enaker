@@ -52,6 +52,7 @@
                                 <th class="text-center" colspan="2" width="10%">Jenis Kelamin</th>
                                 <th class="text-center" rowspan="2" width="10%">Status Karyawan</th>
                                 <th class="text-center" rowspan="2" width="10%">Gaji</th>
+                                <th class="text-center" rowspan="2" width="10%">Tanggal</th>
                                 <th class="text-center" rowspan="2" width="10%"><i class="fa fa-cog"></i> Action</th>
                             </tr>
                             <tr>
