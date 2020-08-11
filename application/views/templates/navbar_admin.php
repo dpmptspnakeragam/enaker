@@ -86,7 +86,6 @@
               <div class="collapse" id="collapse4">
                 <ul>
                   <li><a class="nav-link" href="<?= base_url(); ?>admin/profil_lpk">Profil</a></li>
-                  <li><a class="nav-link" href="<?= base_url(); ?>admin/jumlah_latih">Jumlah Yang Dilatih</a></li>
                   <li><a class="nav-link" href="<?= base_url(); ?>admin/alumni_lpk">Alumni</a></li>
                 </ul>
               </div>
@@ -253,7 +252,6 @@
               <div class="collapse" id="collapse4">
                 <ul>
                   <li><a class="nav-link" href="<?= base_url(); ?>admin/profil_lpk">Profil</a></li>
-                  <li><a class="nav-link" href="<?= base_url(); ?>admin/jumlah_latih">Jumlah Yang Dilatih</a></li>
                   <li><a class="nav-link" href="<?= base_url(); ?>admin/alumni_lpk">Alumni</a></li>
                 </ul>
               </div>
