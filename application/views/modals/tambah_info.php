@@ -49,7 +49,7 @@
             <select required name="id_jenis" class="form-control">
               <?php foreach ($jenis_berita->result() as $row) {
               ?>
-                <option value="<?= $row->nama_jenis; ?>"><?= $row->nama_jenis; ?></option>;}
+                <option value="<?= $row->id_jenis; ?>"><?= $row->nama_jenis; ?></option>;}
               <?php }    ?>
             </select>
           </div>
