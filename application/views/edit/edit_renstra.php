@@ -13,7 +13,7 @@
           <form role="form" action="<?= base_url(); ?>admin/peraturan/ubah_data_perencanaan" method="post" enctype="multipart/form-data" disabled>
             <div class="form-group" hidden>
               <label>Id</label>
-              <input type="text" class="form-control" id="id" name="id" value="<?php echo $row->id_renstra; ?>">
+              <input type="text" class="form-control" id="id" name="id_renstra" value="<?php echo $row->id_renstra; ?>">
             </div>
             <div class="form-group">
               <label for="nama_renstra">Nama Peraturan</label>
@@ -23,7 +23,7 @@
             <div class="form-group">
               <label for="file">File</label>
               <input type="file" name="file" id="file">
-              <input name="old" type="hidden" id="old" value="<?php echo $row->file; ?>" />
+              <input name="old" type="hidden" id="old" value="<?php echo $row->file_renstra; ?>" />
             </div>
         </div>
         <div class="modal-footer">
