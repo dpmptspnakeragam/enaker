@@ -39,16 +39,15 @@
           <table class="table table-striped table-borderless table-hover" id="dataTables-example">
             <thead class="bg-dark text-light">
               <tr>
-                <th class="text-center">No.</th>
-                <th class="text-center">Judul Berita</th>
-                <th class="text-center">Isi Berita</th>
-                <th class="text-center">Gambar Berita</th>
-                <th class="text-center">Tanggal Terbit</th>
-                <th class="text-center">Pengirim</th>
-                <th class="text-center">Link Terkait</th>
-                <th class="text-center">Syarat</th>
-                <th class="text-center">Jenis</th>
-                <th class="text-center"><i class="fa fa-cog"></i> Aksi</th>
+                <th class="text-center" width="auto">No.</th>
+                <th class="text-center" width="auto">Judul Berita</th>
+                <th class="text-center" width="auto">Isi Berita</th>
+                <th class="text-center" width="auto">Gambar Berita</th>
+                <th class="text-center" width="auto">Tanggal Terbit</th>
+                <th class="text-center" width="auto">Pengirim</th>
+                <th class="text-center" width="auto">Link Terkait</th>
+                <th class="text-center" width="auto">Jenis</th>
+                <th class="text-center" width="auto"><i class="fa fa-cog"></i> Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +63,6 @@
                   <td class="text-center"><?= $row->tgl_berita; ?></td>
                   <td class="text-center"><?= $row->pengirim_berita; ?></td>
                   <td class="text-center"><?= $row->alamat; ?></td>
-                  <td class="text-center"><?= $row->syarat; ?></td>
                   <td class="text-center"><?= $row->nama_jenis; ?></td>
                   <td class="text-center">
                     <div class="btn-group">

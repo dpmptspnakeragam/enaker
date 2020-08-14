@@ -19,6 +19,7 @@
  <script type="text/javascript">
    $(function() {
      CKEDITOR.replace('ckeditor');
+     CKEDITOR.replace('edit_berita');
    });
  </script>
  </body>

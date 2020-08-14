@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="isi_berita">Isi Informasi</label>
-                            <textarea id="ckeditor" rows="10" class="form-control" type="text" name="isi_berita" required><?php echo $row->isi_berita; ?></textarea>
+                            <textarea id="edit_berita" rows="10" class="form-control" type="text" name="isi_berita" required><?php echo $row->isi_berita; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="syarat">Keterangan</label>
