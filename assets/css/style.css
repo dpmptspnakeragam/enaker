@@ -1,33 +1,45 @@
-a{
-        color: black;
-        text-decoration: none;
-}
-a:hover{
-	color: grey;
-	text-decoration: none;
-}
-a:link{
+a {
 	color: black;
 	text-decoration: none;
 }
-a:active{
+a:hover {
 	color: grey;
 	text-decoration: none;
 }
-a:visited{
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:active {
+	color: grey;
+	text-decoration: none;
+}
+a:visited {
 	background: yellow;
 	text-decoration: none;
 }
 
-.tanda{
-	color:grey;
-	font-size:12px;
+.tanda {
+	color: grey;
+	font-size: 12px;
 }
 
-.page-item:visited{
+.page-item:visited {
 	background-color: white;
 }
 
-.page-link:visited{
+.page-link:visited {
 	background-color: white;
+}
+
+.syaratblk {
+	font-size: 12px;
+}
+
+.pelatihanblk {
+	border-bottom-left-radius: 100px;
+}
+
+.gambarmagang {
+	border-top-right-radius: 50px;
 }

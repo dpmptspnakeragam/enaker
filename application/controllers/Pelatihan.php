@@ -1,9 +1,10 @@
 <?php
-class Pelatihan extends CI_controller {
-	public function index()
-	{
-		$this->load->model('Model_pelatihan');
-		        //konfigurasi pagination
+class Pelatihan extends CI_controller
+{
+    public function index()
+    {
+        $this->load->model('Model_pelatihan');
+        //konfigurasi pagination
         $config['base_url'] = site_url('pelatihan/index'); //site url
         $config['total_rows'] = $this->Model_pelatihan->hitung_pelatihan(); //total row
         $config['per_page'] = 4;  //show record per halaman
@@ -11,7 +12,7 @@ class Pelatihan extends CI_controller {
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
 
-         // Membuat Style pagination untuk BootStrap v4
+        // Membuat Style pagination untuk BootStrap v4
         $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = '&raquo';
@@ -34,12 +35,12 @@ class Pelatihan extends CI_controller {
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data ['pelatihan'] = $this->Model_pelatihan->tampil_pelatihan_pagination($config['per_page'], $data['page']);
-		$data['pagination'] = $this->pagination->create_links(); 
+        $data['pelatihan'] = $this->Model_pelatihan->tampil_pelatihan_pagination($config['per_page'], $data['page']);
+        $data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/navbar');
-		$this->load->view('pelatihan', $data);
-		$this->load->view('templates/footer');
-	}
+        $this->load->view('templates/header');
+        $this->load->view('templates/navbar');
+        $this->load->view('pelatihan', $data);
+        $this->load->view('templates/footer');
+    }
 }

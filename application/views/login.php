@@ -26,13 +26,13 @@
                                 <p>Berapakah jumlah</p>
                                 <div class="row">
                                     <div class="col">
-                                        <input class="form-control" type='number' value='<?= rand(1, 10) ?>' name='angka1' autocomplete=off readonly>
+                                        <input class="form-control shadow" type='number' value='<?= rand(1, 10) ?>' name='angka1' autocomplete=off readonly>
                                     </div>+
                                     <div class="col">
-                                        <input class="form-control" type='number' value='<?= rand(1, 10) ?>' name='angka2' autocomplete=off readonly>
+                                        <input class="form-control shadow" type='number' value='<?= rand(1, 10) ?>' name='angka2' autocomplete=off readonly>
                                     </div>=
                                     <div class="col">
-                                        <input class="form-control" type='number' name='c' placeholder='Jawaban' autocomplete=off>
+                                        <input class="form-control shadow" type='number' name='c' placeholder='Jawaban' autocomplete=off>
                                     </div>
                                 </div>
                                 <hr>

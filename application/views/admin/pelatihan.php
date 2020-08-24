@@ -41,7 +41,7 @@
                         <thead class="bg-info text-light">
                             <tr>
                                 <th class="text-center" width="20%">Pelatihan</th>
-                                <th class="text-center" width="20%">Syarat</th>
+                                <th class="text-center" width="20%">Persyaratan</th>
                                 <th class="text-center" width="20%">Gambar</th>
                                 <th class="text-center" width="20%">Jadwal</th>
                                 <th class="text-center" width="10%">Periode Tahun</th>

@@ -16,12 +16,7 @@
    feather.replace()
  </script>
  <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
- <script type="text/javascript">
-   $(function() {
-     CKEDITOR.replace('ckeditor');
-     CKEDITOR.replace('edit_berita');
-   });
- </script>
+ <script src="<?php echo base_url(); ?>assets/js/panggilckeditor.js"></script>
  </body>
 
  </html>

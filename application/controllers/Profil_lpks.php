@@ -1,17 +1,18 @@
 <?php
-class Profil_lpks extends CI_controller {
-	public function index()
-	{
-		$this->load->model('Model_profil_lpks');
-		        //konfigurasi pagination
+class Profil_lpks extends CI_controller
+{
+    public function index()
+    {
+        $this->load->model('Model_profil_lpks');
+        //konfigurasi pagination
         $config['base_url'] = site_url('profil_lpks/index'); //site url
         $config['total_rows'] = $this->Model_profil_lpks->hitung_profil(); //total row
-        $config['per_page'] = 4;  //show record per halaman
+        $config['per_page'] = 6;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
 
-         // Membuat Style pagination untuk BootStrap v4
+        // Membuat Style pagination untuk BootStrap v4
         $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = '&raquo';
@@ -34,12 +35,12 @@ class Profil_lpks extends CI_controller {
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data ['profil'] = $this->Model_profil_lpks->tampil_profil_pagination($config['per_page'], $data['page']);
-		$data['pagination'] = $this->pagination->create_links();
+        $data['profil'] = $this->Model_profil_lpks->tampil_profil_pagination($config['per_page'], $data['page']);
+        $data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/navbar');
-		$this->load->view('profil_lpks', $data);
-		$this->load->view('templates/footer');
-	}
+        $this->load->view('templates/header');
+        $this->load->view('templates/navbar');
+        $this->load->view('profil_lpks', $data);
+        $this->load->view('templates/footer');
+    }
 }

@@ -9,39 +9,39 @@
       </div>
       <div class="modal-body">
         <form role="form" action="<?= base_url(); ?>admin/pelatihan/tambah" method="post" enctype="multipart/form-data">
-        <?php  foreach ( $idmax->result() as $row ) {
-        ?>
-                <div hidden class="form-group">
-                    <label>Id</label>
-                    <input type="text" class="form-control" id="id" name="id" value="<?= $row->idmax+1;?>">
-                </div>
-        <?php } ?>
-                <div class="form-group">
-                    <label for="pelatihan">Pelatihan</label>
-                    <input class="form-control" name="pelatihan" placeholder="Pelatihan" required>
-                    
-                </div>
-                <div class="form-group">
-                    <label for="persyaratan">Tentang Peraturan</label>
-                    <textarea class="form-control" name="persyaratan" rows="3" placeholder="Syarat" required></textarea>
-                </div>
-                    <div class="row">
-                    <div class="form-group col-lg-8">
-                    <label for="tl_lahir">Jadwal Pelatihan</label>
-                    <div class="form-inline">
-                    <input  type="date" class="form-control" name="tgl_awal" placeholder="Tanggal Awal" required> sampai 
-                    <input  type="date" class="form-control" name="tgl_akhir" placeholder="Tanggal Akhir" required>
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                    <label for="tahun">Periode Tahun</label>
-                    <input class="form-control" name="tahun" placeholder="Tahun" required></input>
-                </div>
-                <div class="form-group">
-                    <label for="gambar">File</label>
-                    <input type="file" name="gambar">
-                </div>
+          <?php foreach ($idmax->result() as $row) {
+          ?>
+            <div hidden class="form-group">
+              <label>Id</label>
+              <input type="text" class="form-control" id="id" name="id" value="<?= $row->idmax + 1; ?>">
+            </div>
+          <?php } ?>
+          <div class="form-group">
+            <label for="pelatihan">Pelatihan</label>
+            <input class="form-control" name="pelatihan" placeholder="Pelatihan" required>
+
+          </div>
+          <div class="form-group">
+            <label for="persyaratan">Persyaratan</label>
+            <textarea id="syaratpelatihan" rows="5" class="form-control" name="persyaratan" required></textarea>>
+          </div>
+          <div class="row">
+            <div class="form-group col-lg-8">
+              <label for="tl_lahir">Jadwal Pelatihan</label>
+              <div class="form-inline">
+                <input type="date" class="form-control" name="tgl_awal" placeholder="Tanggal Awal" required> sampai
+                <input type="date" class="form-control" name="tgl_akhir" placeholder="Tanggal Akhir" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tahun">Periode Tahun</label>
+            <input class="form-control" name="tahun" placeholder="Tahun" required></input>
+          </div>
+          <div class="form-group">
+            <label for="gambar">File</label>
+            <input type="file" name="gambar">
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
