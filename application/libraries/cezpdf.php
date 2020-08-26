@@ -1,6 +1,6 @@
 <?php
 
-include_once(APPPATH . 'libraries/pdf/class.pdf.php');
+include_once(APPPATH . 'libraries/pdf/class_pdf.php');
 
 class Cezpdf extends Cpdf {
 //==============================================================================
@@ -1552,4 +1552,3 @@ function uline($info){
 // ------------------------------------------------------------------------------
 
 }
-?>
