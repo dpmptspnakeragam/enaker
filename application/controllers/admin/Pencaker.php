@@ -1,10 +1,12 @@
-<?php 
-if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pencaker extends CI_controller {
-	public function __construct() {
+class Pencaker extends CI_controller
+{
+	public function __construct()
+	{
 		parent::__construct();
-		if ($this->session->userdata('username')=="") {
+		if ($this->session->userdata('username') == "") {
 			redirect('login');
 		}
 	}
@@ -19,7 +21,7 @@ class Pencaker extends CI_controller {
 		$data = $this->Model_pencaker->tampil_data();
 		$d = $this->Model_pencaker->total_pencaker();
 		$data = $this->Model_pencaker->id_nagari();
-		foreach ($data as $row => $id){
+		foreach ($data as $row => $id) {
 			$data[$row]->jumlahttsdlk = $this->Model_pencaker->jumlahttsdlk($id->id_nagari);
 			$data[$row]->jumlahttsdpr = $this->Model_pencaker->jumlahttsdpr($id->id_nagari);
 			$data[$row]->jumlahsdlk = $this->Model_pencaker->jumlahsdlk($id->id_nagari);
@@ -60,7 +62,7 @@ class Pencaker extends CI_controller {
 		$d = $this->Model_pencaker->total_kecamatan($id_nagari);
 		$data = $this->Model_pencaker->kecamatan($id_nagari);
 		$data = $this->Model_pencaker->tampil_kecamatan($id_nagari);
-		foreach ($data as $row => $id){
+		foreach ($data as $row => $id) {
 			$data[$row]->jumlahttsdlk = $this->Model_pencaker->jumlahttsdlkkecamatan($id->id_nagari2);
 			$data[$row]->jumlahttsdpr = $this->Model_pencaker->jumlahttsdprkecamatan($id->id_nagari2);
 			$data[$row]->jumlahsdlk = $this->Model_pencaker->jumlahsdlkkecamatan($id->id_nagari2);
@@ -127,10 +129,9 @@ class Pencaker extends CI_controller {
 		$this->form_validation->set_rules('pekerjaan', 'Pekerjaan', 'required');
 		$this->form_validation->set_rules('keterampilan', 'Keterampilan', 'required');
 		$this->form_validation->set_rules('pelatihan', 'Pelatihan', 'required');
-		if ( $this->form_validation->run() == FALSE)
-		{
-			redirect_back();
-		}else{
+		if ($this->form_validation->run() == FALSE) {
+			echo '<script>history.back(self)</script>';
+		} else {
 			$id_penganggur = $this->input->post('id', true);
 			$nama_lengkap = $this->input->post('nama_lengkap', true);
 			$jk = $this->input->post('jk', true);
@@ -147,17 +148,17 @@ class Pencaker extends CI_controller {
 			$jurusan = $this->input->post('jurusan', true);
 			$pekerjaan = $this->input->post('pekerjaan', true);
 
-			$data = array (
-			'id_penganggur' => $id_penganggur,
-			'nama_lengkap' => $nama_lengkap,
-			'jk' => $jk,
-			'tmpt_lahir' => $tmpt_lahir,
-			'tgl_lahir' => $tgl_lahir,
-			'kecamatan' => $kecamatan,
-			'umur' => $umur,
-			'nik' => $nik,
-			'nagari' => $nagari,
-			'pelatihan' => $pelatihan
+			$data = array(
+				'id_penganggur' => $id_penganggur,
+				'nama_lengkap' => $nama_lengkap,
+				'jk' => $jk,
+				'tmpt_lahir' => $tmpt_lahir,
+				'tgl_lahir' => $tgl_lahir,
+				'kecamatan' => $kecamatan,
+				'umur' => $umur,
+				'nik' => $nik,
+				'nagari' => $nagari,
+				'pelatihan' => $pelatihan
 			);
 
 			$this->load->model('Model_pencaker');
@@ -177,10 +178,9 @@ class Pencaker extends CI_controller {
 		$this->form_validation->set_rules('nik', 'nik', 'required');
 		$this->form_validation->set_rules('kecamatan', 'No. HP', 'required');
 		$this->form_validation->set_rules('nagari', 'nagari', 'required');
-		if ( $this->form_validation->run() == FALSE)
-		{
+		if ($this->form_validation->run() == FALSE) {
 			redirect('admin/alumni_blk');
-		}else{
+		} else {
 			$id_alumni = $this->input->post('id_alumni', true);
 			$nama_lengkap = $this->input->post('nama_lengkap', true);
 			$jk = $this->input->post('jk', true);
@@ -192,19 +192,19 @@ class Pencaker extends CI_controller {
 			$nagari = $this->input->post('nagari', true);
 			$pelatihan = $this->input->post('pelatihan', true);
 
-			$data = array (
-			'id_alumni' => $id_alumni,
-			'nama_lengkap' => $nama_lengkap,
-			'jk' => $jk,
-			'tmpt_lahir' => $tmpt_lahir,
-			'tgl_lahir' => $tgl_lahir,
-			'kecamatan' => $kecamatan,
-			'umur' => $umur,
-			'nik' => $nik,
-			'nagari' => $nagari,
-			'pelatihan' => $pelatihan
+			$data = array(
+				'id_alumni' => $id_alumni,
+				'nama_lengkap' => $nama_lengkap,
+				'jk' => $jk,
+				'tmpt_lahir' => $tmpt_lahir,
+				'tgl_lahir' => $tgl_lahir,
+				'kecamatan' => $kecamatan,
+				'umur' => $umur,
+				'nik' => $nik,
+				'nagari' => $nagari,
+				'pelatihan' => $pelatihan
 			);
-			
+
 			$this->load->model('Model_alumni_pelatihan');
 			$this->Model_alumni_pelatihan->ubah_data($data, $id_alumni);
 			$this->session->set_flashdata("berhasil", "Ubah data <b>$nama_lengkap</b> berhasil !");
@@ -212,16 +212,17 @@ class Pencaker extends CI_controller {
 		}
 	}
 
-	public function hapus($id_penganggur){
-		$this->db->where('id_penganggur',$id_penganggur);
-	    $query = $this->db->get('penganggur');
-	    $row = $query->row();
+	public function hapus($id_penganggur)
+	{
+		$this->db->where('id_penganggur', $id_penganggur);
+		$query = $this->db->get('penganggur');
+		$row = $query->row();
 
-	    $this->load->model('Model_pencaker');
-	    $this->Model_pencaker->delete($id_penganggur);
-	    $this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_lengkap</b> berhasil !");
-	    
-	  echo '<script>history.back(self)</script>';
+		$this->load->model('Model_pencaker');
+		$this->Model_pencaker->delete($id_penganggur);
+		$this->session->set_flashdata("gagal", "Hapus data <b>$row->nama_lengkap</b> berhasil !");
+
+		echo '<script>history.back(self)</script>';
 	}
 
 	public function detail_pencaker()
@@ -240,7 +241,7 @@ class Pencaker extends CI_controller {
 		$data = $this->Model_pencaker->tampil_nagari($row->id_nagari2);
 		$this->load->view('templates/header_admin');
 		$this->load->view('templates/navbar_admin');
-		$this->load->view('admin/detail_pencaker', array( 'session' => $session, 'idmax' => $idmax, 'kecamatan' => $kecamatan, 'nagari' => $nagari, 'pelatihan' => $pelatihan, 'tampil_nagari' => $data, 'nagari' => $data, 'total_pencaker' => $d));
+		$this->load->view('admin/detail_pencaker', array('session' => $session, 'idmax' => $idmax, 'kecamatan' => $kecamatan, 'nagari' => $nagari, 'pelatihan' => $pelatihan, 'tampil_nagari' => $data, 'nagari' => $data, 'total_pencaker' => $d));
 		$this->load->view('modals/tambah_pencaker');
 		$this->load->view('modals/cetak_filter_pelatihan_nagari');
 		$this->load->view('modals/cetak_filter_pendidikan_nagari');
@@ -259,7 +260,7 @@ class Pencaker extends CI_controller {
 		$d = $this->Model_pencaker->total_kecamatan($row->id_nagari);
 		$data = $this->Model_pencaker->kecamatan($row->id_nagari);
 		$data = $this->Model_pencaker->tampil_kecamatan($row->id_nagari);
-		foreach ($data as $row => $id){
+		foreach ($data as $row => $id) {
 			$data[$row]->jumlahttsdlk = $this->Model_pencaker->jumlahttsdlkkecamatan($id->id_nagari2);
 			$data[$row]->jumlahttsdpr = $this->Model_pencaker->jumlahttsdprkecamatan($id->id_nagari2);
 			$data[$row]->jumlahsdlk = $this->Model_pencaker->jumlahsdlkkecamatan($id->id_nagari2);
@@ -299,13 +300,14 @@ class Pencaker extends CI_controller {
 
 	//-----------Eksport Enaker-----------------------------------------
 
-	public function cetak_rekap_enaker($id_nagari){
+	public function cetak_rekap_enaker($id_nagari)
+	{
 		ob_start();
 		$this->load->model('Model_pencaker');
 		$d = $this->Model_pencaker->total_kecamatan($id_nagari);
 		$data = $this->Model_pencaker->kecamatan($id_nagari);
 		$data = $this->Model_pencaker->tampil_kecamatan($id_nagari);
-		foreach ($data as $row => $id){
+		foreach ($data as $row => $id) {
 			$data[$row]->jumlahttsdlk = $this->Model_pencaker->jumlahttsdlkkecamatan($id->id_nagari2);
 			$data[$row]->jumlahttsdpr = $this->Model_pencaker->jumlahttsdprkecamatan($id->id_nagari2);
 			$data[$row]->jumlahsdlk = $this->Model_pencaker->jumlahsdlkkecamatan($id->id_nagari2);
@@ -333,22 +335,24 @@ class Pencaker extends CI_controller {
 		}
 		$this->load->view('eksport/pdf_rekap_enaker', array('tampil_kecamatan' => $data, 'kecamatan' => $data, 'total_kecamatan' => $d));
 		$html = ob_get_contents();
-        ob_end_clean();
+		ob_end_clean();
 
-	        require_once('./assets/html2pdf/html2pdf.class.php');
-	    $pdf = new HTML2PDF('L','F4','en');
-	    $pdf->WriteHTML($html);
-	    $pdf->Output('Rekapitulasi Data Pencari Kerja.pdf', 'I');
+		require_once('./assets/html2pdf/html2pdf.class.php');
+		$pdf = new HTML2PDF('L', 'F4', 'en');
+		$pdf->WriteHTML($html);
+		$pdf->Output('Rekapitulasi Data Pencari Kerja.pdf', 'I');
 	}
 
-	public function cetak_pencaker($id_nagari){
+	public function cetak_pencaker($id_nagari)
+	{
 		$this->load->library('cezpdf');
 		$this->load->model('Model_pencaker');
 		$data['tampil_pencaker'] = $this->Model_pencaker->tampil_pencaker($id_nagari);
 		$this->load->view('eksport/pdf_pencaker_enaker', $data);
 	}
 
-	public function cetak_filter_pelatihan_enaker(){
+	public function cetak_filter_pelatihan_enaker()
+	{
 		$this->load->library('cezpdf');
 		$kecamatan = $this->input->post('id_kecamatan', true);
 		$pelatihan = $this->input->post('pelatihan', true);
@@ -358,7 +362,8 @@ class Pencaker extends CI_controller {
 		$this->load->view('eksport/pdf_filter_pelatihan_enaker', $data);
 	}
 
-	public function cetak_filter_pendidikan_enaker(){
+	public function cetak_filter_pendidikan_enaker()
+	{
 		$this->load->library('cezpdf');
 		$kecamatan = $this->input->post('id_kecamatan', true);
 		$pendidikan = $this->input->post('pendidikan', true);
@@ -368,7 +373,8 @@ class Pencaker extends CI_controller {
 		$this->load->view('eksport/pdf_filter_pendidikan_enaker', $data);
 	}
 
-	public function cetak_filter_umur_enaker(){
+	public function cetak_filter_umur_enaker()
+	{
 		$this->load->library('cezpdf');
 		$kecamatan = $this->input->post('id_kecamatan', true);
 		$umurdari = $this->input->post('umurdari', true);
@@ -383,14 +389,16 @@ class Pencaker extends CI_controller {
 	//----------- Eksport Nagari----------------------------------------
 
 
-	public function cetak_pencaker_nagari($id_nagari){
+	public function cetak_pencaker_nagari($id_nagari)
+	{
 		$this->load->library('cezpdf');
 		$this->load->model('Model_pencaker');
 		$data['tampil_pencaker'] = $this->Model_pencaker->tampil_pencaker_nagari($id_nagari);
 		$this->load->view('eksport/pdf_pencaker_nagari', $data);
-	}	
+	}
 
-	public function cetak_filter_pelatihan_nagari(){
+	public function cetak_filter_pelatihan_nagari()
+	{
 		$this->load->library('cezpdf');
 		$nagari = $this->input->post('id_nagari', true);
 		$pelatihan = $this->input->post('pelatihan', true);
@@ -400,7 +408,8 @@ class Pencaker extends CI_controller {
 		$this->load->view('eksport/pdf_filter_pelatihan_nagari', $data);
 	}
 
-	public function cetak_filter_pendidikan_nagari(){
+	public function cetak_filter_pendidikan_nagari()
+	{
 		$this->load->library('cezpdf');
 		$nagari = $this->input->post('id_nagari', true);
 		$pendidikan = $this->input->post('pendidikan', true);
@@ -410,7 +419,8 @@ class Pencaker extends CI_controller {
 		$this->load->view('eksport/pdf_filter_pendidikan_nagari', $data);
 	}
 
-	public function cetak_filter_umur_nagari(){
+	public function cetak_filter_umur_nagari()
+	{
 		$this->load->library('cezpdf');
 		$nagari = $this->input->post('id_nagari', true);
 		$umurdari = $this->input->post('umurdari', true);
